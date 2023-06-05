@@ -2,6 +2,8 @@ APP=$(shell basename $(shell git remote get-url origin))
 REGISTRY=asachko
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 IMAGE_TAG=${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+# TARGETOS=linux
+# TARGETARCH=amd64
 
 format: 
 	gofmt -s -w ./
